@@ -151,7 +151,7 @@ static void check_functions(
                     parasail_result_t *result = NULL;
                     unsigned long a = 0;
                     unsigned long b = 1;
-                    int8_t *ref_trace_table = NULL;
+                    int *ref_trace_table = NULL;
                     int *trace_table = NULL;
                     size_t size_a = 0;
                     size_t size_b = 0;
@@ -190,7 +190,7 @@ static void check_functions(
                             if (exit_on_mismatch) exit(EXIT_FAILURE);
                         }
                     }
-                    if (diff_array(size_a, size_b, ref_trace_table, trace_table, result)) {
+                    if (diff_array(size_a, size_b, (int8_t *)ref_trace_table, (int8_t *)trace_table, result)) {
 #pragma omp critical(printer)
                         {
                             printf("%s(%lu,%lu,%d,%d,%s) bad trace table\n",

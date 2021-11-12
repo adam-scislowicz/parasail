@@ -22,6 +22,8 @@
 #include "parasail.h"
 #include "parasail/memory.h"
 
+#define HAVE_POSIX_MEMALIGN (1)
+
 void* parasail_memalign(size_t alignment, size_t size)
 {
     void *ptr = NULL;

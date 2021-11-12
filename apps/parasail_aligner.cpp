@@ -19,10 +19,12 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#if defined(HAVE_GETOPT) && defined(HAVE_UNISTD_H)
-#include <unistd.h>
-#elif defined(HAVE_WINDOWS_H)
+#if defined(HAVE_WINDOWS_H)
 #include "wingetopt/src/getopt.h"
+#else
+#include <getopt.h>
+#include <unistd.h>
+#include <signal.h>
 #endif
 #if defined(HAVE_POLL)
 #include <err.h>

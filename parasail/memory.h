@@ -55,6 +55,8 @@ extern uint32_t* parasail_reverse_uint32_t(const uint32_t *s, size_t end);
 #define PARASAIL_FLAG_BITS_INT PARASAIL_FLAG_BITS_32
 #elif SIZEOF_INT == 8
 #define PARASAIL_FLAG_BITS_INT PARASAIL_FLAG_BITS_64
+#else
+#define PARASAIL_FLAG_BITS_INT PARASAIL_FLAG_BITS_64
 #endif
 
 extern int* parasail_striped_unwind(
