@@ -1043,7 +1043,7 @@ IF (ALWAYS_FALSE)
 ENDIF( )
 
 ADD_EXECUTABLE( parasail_stats apps/parasail_stats.c )
-TARGET_LINK_LIBRARIES( parasail_stats parasail )
+TARGET_LINK_LIBRARIES( parasail_stats parasail m )
 
 ADD_EXECUTABLE( traceback tests/traceback.c ${maybe_getopt} )
 TARGET_LINK_LIBRARIES( traceback parasail m )
